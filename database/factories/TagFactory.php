@@ -18,7 +18,8 @@ class TagFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(1),
-            'slug' => $this->faker->slug(1)
+            'slug' => $this->faker->slug(1),
+            'color_combination_id' => 1
         ];
     }
 }

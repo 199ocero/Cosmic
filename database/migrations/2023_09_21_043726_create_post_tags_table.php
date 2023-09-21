@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\Post::class)->onDelete('cascade');
             $table->foreignIdFor(\App\Models\Tag::class)->onDelete('cascade');
-            $table->foreignIdFor(\App\Models\ColorCombination::class)->onDelete('null');
             $table->timestamps();
         });
     }
