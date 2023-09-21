@@ -11,16 +11,9 @@ class Category extends Model
 
     protected $fillable = [
         'title',
-        'slug',
-        'text_color',
-        'bg_color'
+        'slug'
     ];
 
-    /**
-     * Retrieve the posts associated with the current instance.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
     public function posts()
     {
         return $this->belongsToMany(Post::class);
