@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seed for post
+        \App\Models\ColorCombination::factory()->create();
         \App\Models\Post::factory(20)->create();
         \App\Models\Category::factory(5)->create();
         \App\Models\Tag::factory(10)->create();

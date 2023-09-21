@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category_post', function (Blueprint $table) {
+        Schema::create('color_combinations', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Category::class)->onDelete('cascade');
-            $table->foreignIdFor(\App\Models\Post::class)->onDelete('cascade');
-            $table->foreignIdFor(\App\Models\ColorCombination::class)->onDelete('null');
+            $table->string('name');
+            $table->string('text_color');
+            $table->string('bg_color');
+            $table->boolean('default')->default(true);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category_posts');
+        Schema::dropIfExists('color_combinations');
     }
 };

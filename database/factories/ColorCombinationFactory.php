@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tag>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ColorCombination>
  */
-class TagFactory extends Factory
+class ColorCombinationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,10 @@ class TagFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(1),
-            'slug' => $this->faker->slug(1)
+            'name' => 'Default',
+            'text_color' => '#FFFFFF',
+            'bg_color' => '#F59E0A',
+            'default' => true
         ];
     }
 }

@@ -18,4 +18,9 @@ class Category extends Model
     {
         return $this->belongsToMany(Post::class);
     }
+
+    public function colorCombination()
+    {
+        return $this->belongsTo(ColorCombination::class);
+    }
 }
