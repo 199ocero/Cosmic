@@ -45,11 +45,7 @@ class ColorCombinationResource extends Resource
                                 Forms\Components\ColorPicker::make('bg_color')
                                     ->label('Background Color')
                                     ->required()
-                            ]),
-                        Forms\Components\Toggle::make('default')
-                            ->label('Make it the default color combination')
-                            ->onColor('success')
-                            ->offColor('gray')
+                            ])
                     ])
             ]);
     }
@@ -65,8 +61,6 @@ class ColorCombinationResource extends Resource
                     ->searchable(),
                 Tables\Columns\ColorColumn::make('bg_color')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('default')
-                    ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
