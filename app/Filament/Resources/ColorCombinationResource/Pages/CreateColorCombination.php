@@ -12,13 +12,6 @@ class CreateColorCombination extends CreateRecord
 {
     protected static string $resource = ColorCombinationResource::class;
 
-    protected function handleRecordCreation(array $data): Model
-    {
-        if ($data['default']) {
-            ColorCombination::query()->update(['default' => false]);
-        }
-        return static::getModel()::create($data);
-    }
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

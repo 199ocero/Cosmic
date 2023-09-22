@@ -19,17 +19,6 @@ class EditColorCombination extends EditRecord
         ];
     }
 
-    protected function handleRecordUpdate(Model $record, array $data): Model
-    {
-        if ($data['default']) {
-            ColorCombination::query()->update(['default' => false]);
-        }
-
-        $record->update($data);
-
-        return $record;
-    }
-
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
