@@ -16,7 +16,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('color')->default(Color::Amber['500']);
+            $table->string('color_name')->default('amber');
+            $table->string('color_code')->default('rgb(' . Color::Amber['500'] . ')');
             $table->timestamps();
         });
     }

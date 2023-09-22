@@ -26,7 +26,8 @@ class TagFactory extends Factory
         return [
             'title' => $title,
             'slug' => $slug,
-            'color' => 'rgb(' . Color::Amber['500'] . ')'
+            'color_name' => 'amber',
+            'color_code' => 'rgb(' . Color::Amber['500'] . ')'
         ];
     }
 }
