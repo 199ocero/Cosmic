@@ -12,16 +12,11 @@ class Category extends Model
     protected $fillable = [
         'title',
         'slug',
-        'color_combination_id',
+        'color'
     ];
 
     public function posts()
     {
         return $this->belongsToMany(Post::class);
-    }
-
-    public function colorCombination()
-    {
-        return $this->belongsTo(ColorCombination::class);
     }
 }
