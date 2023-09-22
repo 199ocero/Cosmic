@@ -12,7 +12,6 @@ class ColorCombination extends Model
     protected $fillable = [
         'name',
         'text_color',
-        'bg_color',
-        'default',
+        'bg_color'
     ];
 }
