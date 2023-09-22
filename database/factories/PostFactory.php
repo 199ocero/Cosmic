@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Support\Str;
-use App\Enum\PostStatusEnum;
+use App\Enum\PostStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -30,7 +30,7 @@ class PostFactory extends Factory
             'title' => $title,
             'slug' => $slug,
             'content' => $this->faker->paragraph(10),
-            'status' => PostStatusEnum::DRAFT,
+            'status' => PostStatus::DRAFT,
             'featured' => $this->faker->boolean(10),
             'published_at' => $this->faker->dateTimeBetween('now', '+1 month'),
         ];

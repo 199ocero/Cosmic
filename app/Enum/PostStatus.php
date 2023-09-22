@@ -2,7 +2,7 @@
 
 namespace App\Enum;
 
-class PostStatusEnum
+class PostStatus
 {
     public const PUBLISHED = 'published';
     public const PENDING = 'pending';
