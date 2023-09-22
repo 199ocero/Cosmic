@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->foreignIdFor(\App\Models\ColorCombination::class)->onDelete('null');
+            $table->foreignId('color_combination_id')->nullable()->references('id')->on('color_combinations')->onDelete('set null');
             $table->timestamps();
         });
     }
