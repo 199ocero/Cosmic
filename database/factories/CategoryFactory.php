@@ -26,7 +26,7 @@ class CategoryFactory extends Factory
         return [
             'title' => $title,
             'slug' => $slug,
-            'color' => Color::Amber['500']
+            'color' => 'rgb(' . Color::Amber['500'] . ')'
         ];
     }
 }
