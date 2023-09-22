@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Enum\PostStatusEnum;
 use App\Models\User;
+use Illuminate\Support\Str;
+use App\Enum\PostStatusEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,11 +19,16 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $title = $this->faker->sentence();
+        $title = rtrim($title, '.');
+
+        $slug = Str::slug($title);
+
         return [
             'user_id' => User::factory(),
             'thumbnail' => $this->faker->imageUrl(),
-            'title' => $this->faker->sentence(),
-            'slug' => $this->faker->slug(),
+            'title' => $title,
+            'slug' => $slug,
             'content' => $this->faker->paragraph(10),
             'status' => PostStatusEnum::DRAFT,
             'featured' => $this->faker->boolean(10),

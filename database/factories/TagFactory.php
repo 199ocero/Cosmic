@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,14 @@ class TagFactory extends Factory
      */
     public function definition(): array
     {
+        $title = $this->faker->sentence(rand(1, 2));
+        $title = rtrim($title, '.');
+
+        $slug = Str::slug($title);
+
         return [
-            'title' => $this->faker->sentence(1),
-            'slug' => $this->faker->slug(1),
+            'title' => $title,
+            'slug' => $slug,
             'color_combination_id' => 1
         ];
     }

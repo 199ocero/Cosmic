@@ -17,10 +17,9 @@ class ColorCombinationFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Default',
+            'name' => 'Primary',
             'text_color' => '#FFFFFF',
-            'bg_color' => '#F59E0A',
-            'default' => true
+            'bg_color' => '#F59E0A'
         ];
     }
 }
