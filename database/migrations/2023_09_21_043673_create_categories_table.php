@@ -1,5 +1,6 @@
 <?php
 
+use Filament\Support\Colors\Color;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->foreignId('color_combination_id')->nullable()->references('id')->on('color_combinations')->onDelete('set null');
+            $table->string('color')->default(Color::Amber['500']);
             $table->timestamps();
         });
     }

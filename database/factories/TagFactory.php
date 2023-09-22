@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Support\Str;
+use Filament\Support\Colors\Color;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,7 +26,7 @@ class TagFactory extends Factory
         return [
             'title' => $title,
             'slug' => $slug,
-            'color_combination_id' => 1
+            'color' => Color::Amber['500']
         ];
     }
 }
