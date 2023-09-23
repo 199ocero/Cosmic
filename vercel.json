@@ -13,6 +13,10 @@
             "dest": "/api/assets.php?type=$1&file=$2"
         },
         {
+            "src": "/public/css/filament/filament/app.css",
+            "dest": "/public/css/filament/filament/app.css"
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
