@@ -8,6 +8,86 @@
             "src": "/css/filament/filament/app.css",
             "dest": "/public/css/filament/filament/app.css"
         },
+        { 
+            "src": "/css/filament/forms/forms.css",
+            "dest": "/public/css/filament/forms/forms.css"
+        },
+        { 
+            "src": "/css/filament/support/support.css",
+            "dest": "/public/css/filament/support/support.css"
+        },
+        { 
+            "src": "/js/filament/filament/app.js",
+            "dest": "/public/js/filament/filament/app.js"
+        },
+        { 
+            "src": "/js/filament/filament/echo.js",
+            "dest": "/public/js/filament/filament/echo.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/color-picker.js",
+            "dest": "/public/js/filament/forms/components/color-picker.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/date-picker.js",
+            "dest": "/public/js/filament/forms/components/color-picker.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/file-upload.js",
+            "dest": "/public/js/filament/forms/components/file-upload.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/key-value.js",
+            "dest": "/public/js/filament/forms/components/key-value.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/markdown-editor.js",
+            "dest": "/public/js/filament/forms/components/markdown-editor.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/rich-editor.js",
+            "dest": "/public/js/filament/forms/components/rich-editor.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/select.js",
+            "dest": "/public/js/filament/forms/components/select.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/select.js",
+            "dest": "/public/js/filament/forms/components/select.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/tags-input.js",
+            "dest": "/public/js/filament/forms/components/tags-input.js"
+        },
+        { 
+            "src": "/js/filament/forms/components/textarea.js",
+            "dest": "/public/js/filament/forms/components/textarea.js"
+        },
+        { 
+            "src": "/js/filament/tables/components/tables.js",
+            "dest": "/public/js/filament/tables/components/tables.js"
+        },
+        { 
+            "src": "/js/filament/widgets/components/stats-overview/stat/chart.js",
+            "dest": "/public/js/filament/widgets/components/stats-overview/stat/chart.js"
+        },
+        { 
+            "src": "/js/filament/widgets/components/chart.js",
+            "dest": "/public/js/filament/widgets/components/chart.js"
+        },
+        { 
+            "src": "/js/filament/notifications/notifications.js",
+            "dest": "/public/js/filament/notifications/notifications.js"
+        },
+        { 
+            "src": "/js/filament/support/async-alpine.js",
+            "dest": "/public/js/filament/support/async-alpine.js"
+        },
+        { 
+            "src": "/js/filament/support/support.js",
+            "dest": "/public/js/filament/support/support.js"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
