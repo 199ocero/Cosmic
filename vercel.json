@@ -10,7 +10,7 @@
         },
         {
             "src": "/public/css/filament/filament/app.css",
-            "dest": "/public/css/filament/filament/app.css"
+            "dest": "/public/css/filament/filament/app.css/?v=3.0.53.0"
         },
         {
             "src": "/(.*)",
