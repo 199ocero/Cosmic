@@ -5,8 +5,8 @@
     },
     "routes": [
         { 
-            "src": "/(css|js)/(.*)$",
-            "dest": "/api/assets.php?type=$1&file=$2"
+            "src": "/css/filament/filament/(.*)",
+            "dest": "/public/css/filament/filament/app.css"
         },
         {
             "src": "/(.*)",

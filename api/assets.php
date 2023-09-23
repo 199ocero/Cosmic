@@ -26,26 +26,10 @@ $filePathMapping = [
     'support.css' => 'css/filament/support/',
 ];
 
-if (isset($_GET['type'])) {
-    $type = $_GET['type'];
-    $file = $_GET['file'];
-
-    if (array_key_exists($file, $filePathMapping)) {
-        $path = $filePathMapping[$file];
-        $fullPath = __DIR__ . '/../public/' . $path . $file;
-
-        if ($type === 'css' && pathinfo($file, PATHINFO_EXTENSION) === 'css') {
-            header("Content-type: text/css; charset: UTF-8");
-            readfile($fullPath);
-            exit;
-        } elseif ($type === 'js' && pathinfo($file, PATHINFO_EXTENSION) === 'js') {
-            header('Content-Type: application/javascript; charset: UTF-8');
-            readfile($fullPath);
-            exit;
-        }
-    }
+if ($_GET['type'] === 'css') {
+    header("Content-type: text/css; charset: UTF-8");
+    echo require __DIR__ . '/../public/css/' . basename($_GET['file']);
+} else if ($_GET['type'] === 'js') {
+    header('Content-Type: application/javascript; charset: UTF-8');
+    echo require __DIR__ . '/../public/js/' . basename($_GET['file']);
 }
-
-// If the file is not found or the type is invalid, return an error message
-header('HTTP/1.1 404 Not Found');
-echo 'File not found';
