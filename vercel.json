@@ -4,9 +4,17 @@
         "api/*.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
-        { 
-            "src": "/css/filament/filament/(.*)",
+        {
+            "src": "/css/filament/filament/app.css\\?v=(.*)",
             "dest": "/public/css/filament/filament/app.css"
+        },
+        {
+            "src": "/css/filament/forms/forms.css\\?v=(.*)",
+            "dest": "/public/css/filament/forms/forms.css"
+        },
+        {
+            "src": "/css/filament/support/support.css\\?v=(.*)",
+            "dest": "/public/css/filament/support/support.css"
         },
         {
             "src": "/(.*)",
