@@ -1,23 +1,5 @@
 <?php
 
-if (!isset($_GET['type']) || !isset($_GET['file'])) {
-    http_response_code(400);
-    echo "Bad Request: 'type' and 'file' parameters are required.";
-    exit();
-}
-
-$fileType = $_GET['type'];
-$fileName = $_GET['file'];
-
-$allowedTypes = ['css', 'js'];
-
-if (!in_array($fileType, $allowedTypes)) {
-    http_response_code(400);
-    echo "Bad Request: Unsupported file type.";
-    exit();
-}
-
-$basePath = __DIR__ . '/../public/';
 $filePathMapping = [
     // Js Files
     'app.js' => 'js/filament/filament/',
@@ -44,26 +26,26 @@ $filePathMapping = [
     'support.css' => 'css/filament/support/',
 ];
 
-if (isset($filePathMapping[$fileName])) {
-    $filePath = $filePathMapping[$fileName];
-} else {
-    http_response_code(404);
-    echo "Not Found: File not found.";
-    exit();
+if (isset($_GET['type'])) {
+    $type = $_GET['type'];
+    $file = $_GET['file'];
+
+    if (array_key_exists($file, $filePathMapping)) {
+        $path = $filePathMapping[$file];
+        $fullPath = __DIR__ . '/../public/' . $path . $file;
+
+        if ($type === 'css' && pathinfo($file, PATHINFO_EXTENSION) === 'css') {
+            header("Content-type: text/css; charset: UTF-8");
+            readfile($fullPath);
+            exit;
+        } elseif ($type === 'js' && pathinfo($file, PATHINFO_EXTENSION) === 'js') {
+            header('Content-Type: application/javascript; charset: UTF-8');
+            readfile($fullPath);
+            exit;
+        }
+    }
 }
 
-$fullPath = $basePath . $filePath . basename($fileName);
-
-if (!file_exists($fullPath)) {
-    http_response_code(404);
-    echo "Not Found: File not found.";
-    exit();
-}
-
-if ($fileType === 'css') {
-    header("Content-type: text/css; charset: UTF-8");
-} elseif ($fileType === 'js') {
-    header('Content-Type: application/javascript; charset: UTF-8');
-}
-
-readfile($fullPath);
+// If the file is not found or the type is invalid, return an error message
+header('HTTP/1.1 404 Not Found');
+echo 'File not found';
