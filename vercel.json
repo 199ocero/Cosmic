@@ -1,16 +1,12 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
+        "api/*.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
         { 
-            "src": "/build/(.*)",
-            "dest": "/public/build/"
-        },
-        {
-            "src": "/public/css/filament/filament/app.css",
-            "dest": "/css/filament/filament/app.css/?v=3.0.53.0"
+            "src": "/(css|js)/(.*)$",
+            "dest": "/api/assets.php?type=$1&file=$2"
         },
         {
             "src": "/(.*)",
