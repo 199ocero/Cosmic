@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('post_tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Post::class)->onDelete('cascade');
-            $table->foreignIdFor(\App\Models\Tag::class)->onDelete('cascade');
+            $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreignId('tag_id')->references('id')->on('tags')->onDelete('cascade');
             $table->timestamps();
         });
     }
